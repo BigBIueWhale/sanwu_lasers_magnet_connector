@@ -57,7 +57,7 @@ Standard ISO metric right-handed male threaded rod
 3mm length out of which only the tip 2mm are threaded and the base 1mm runoff is shaved down and not threaded.
 ```
 
-I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part with threads for multiple reasons:
+I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
 1. Lack of certainty regarding the threads- too risky
 2. Thread specification required English language specification, and can only exist in a step file for show (being pretty). This makes the whole process more expensive, and less automatic- it might make it hard for the CNC machine to know what to do!
 3. I can always later design another custom stainless steel piece to fit into the generic 17.60mm hole with superglew, and I can decide to make it have threads! This incurs less risk by making the components modular.
