@@ -6,7 +6,7 @@ SanwuLasers™️ offers flashlight adapters that can be screwed onto the top. I
 
 Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
 
-![Project Design Result](./docs/generic_custom_part_paint_3d_view.png)
+![Model Animation from https://imagetostl.com/convert/file/step/to/gif#google_vignette](./docs/complete_model.gif)
 
 # Solution
 
