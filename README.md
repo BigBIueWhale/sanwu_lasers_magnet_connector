@@ -20,8 +20,8 @@ I specifically chose that 3.30mm depth so that I can use with 4mm diameter [neod
 
 That allows me to decide whether a magnet hole is male or female. I can either put 2 magnets in the hole, which will cause the top magnet to extrude ~1mm (male), or I can choose to put only 1 magnet in the hole which will leave a ~1mm depth hole (female).
 
-I chose 3.30mm instead of 3.00mm to leave some room for superglew.\
-I chose 4.04mm instead of 4.00mm to leave some room for machine error and for superglew.
+I chose 3.30mm instead of 3.00mm to leave some room for super glue.\
+I chose 4.04mm instead of 4.00mm to leave some room for machine error and for super glue.
 
 # Process
 
