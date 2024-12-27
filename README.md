@@ -62,12 +62,12 @@ Just for general knowledge, Sanwu uses the following threading specs:
   That's total of 4 threads.
   ```
 - Female (laser head):
-```txt
+  ```txt
   CNC machined
   Metric right-handed female
   m11.5x0.5 tap (11.5mm diameter, 0.5mm pitch)
   6mm depth- total of 12 threads
-```
+  ```
 
 I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
 1. 11.5mm diameter is not standard.
