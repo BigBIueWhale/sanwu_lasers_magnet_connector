@@ -49,16 +49,28 @@ The adapter is 17.55 mm in diameter, so I cut a 17.60mm hole in the cylinder of 
 I plan to cut the adapter in half using a diamond blade circular saw, sand it down, and superglew the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
 
 This is my alternative to reverse-engineering the threads that Sanwu uses.
-My measurements / guess tell me that Sanwu uses threads with the specs:
+
+Just for general knowledge, Sanwu uses the following threading specs:
+
+- Male:
+  ```txt
+  CNC machined
+  Metric right-handed male threaded rod
+  11.45mm diameter teeth (crest-to-crest). 0.05mm smaller diameter than the female tap.
+  0.5mm pitch
+  3mm length out of which only the tip 2mm are threaded and the base 1mm runoff is shaved down and not threaded.
+  That's total of 4 threads.
+  ```
+- Female (laser head):
 ```txt
-Standard ISO metric right-handed male threaded rod
-11.45mm diameter teeth (crest-to-crest)
-~0.45mm pitch
-3mm length out of which only the tip 2mm are threaded and the base 1mm runoff is shaved down and not threaded.
+  CNC machined
+  Metric right-handed female
+  m11.5x0.5 tap (11.5mm diameter, 0.5mm pitch)
+  6mm depth- total of 12 threads
 ```
 
 I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
-1. Lack of certainty regarding the threads- too risky
+1. 11.5mm diameter is not standard.
 2. Thread specification required English language specification, and can only exist in a step file for show (being pretty). This makes the whole process more expensive, and less automatic- it might make it hard for the CNC machine to know what to do!
 3. I can always later design another custom stainless steel piece to fit into the generic 17.60mm hole with superglew, and I can decide to make it have threads! This incurs less risk by making the components modular.
 4. Generic- single design works as either male or female screw side. Only having to print one step file multiple times is significantly cheaper because it only requires one preparation stage for Xometry.
