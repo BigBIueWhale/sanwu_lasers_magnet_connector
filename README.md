@@ -2,7 +2,7 @@
 
 SanwuLasers™️ Lasers such as Striker, Challenger II, Laser Rangers all have option for high powered blue diode (~7 watts).
 
-SanwuLasers™️ offers flashlight adapters that can be screwed onto the top. It's generic, the flashlight adapter fits all of the aforementioned host types.
+SanwuLasers™️ offers flashlight adapters that [can be screwed onto the top](./docs/laser_and_flashlight_adapter.jpg). It's generic, the flashlight adapter fits all of the aforementioned host types.
 
 Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
 
