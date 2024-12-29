@@ -46,7 +46,7 @@ The part can be ordered via its [dedicated listing](./docs/sanwu_adapter_order_s
 
 The adapter is 17.55 mm in diameter, so I cut a 17.60mm hole in the cylinder of my custom design.
 
-I plan to cut the adapter in half using a diamond blade circular saw, sand it down, and superglew the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
+I [cut the adapter in half](./docs/sanwu_adapter_cut_in_half.jpg) using a [diamond blade circular saw](./docs/angle_grinder/angle_grinder_readme.pdf), sand it down, and superglew the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
 
 This is my alternative to reverse-engineering the threads that Sanwu uses.
 
