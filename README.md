@@ -14,14 +14,17 @@ Custom order for CNC machined stainless steel part that converts the screw-on me
 
 The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
 
-The generic custom machined part has 16 small holes, each 4.04mm in diameter and 3.30mm depth.
+The generic custom machined part has 16 small holes, each 4.10mm in diameter and 3.30mm depth.
 
-I specifically chose that 3.30mm depth so that I can use with 4mm diameter [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) that have a **2mm height** (not a typo). 
+It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** (apparently they're less). 
 
-That allows me to decide whether a magnet hole is male or female. I can either put 2 magnets in the hole, which will cause the top magnet to extrude ~1mm (male), or I can choose to put only 1 magnet in the hole which will leave a ~1mm depth hole (female).
+It just so happens that the specific magnets I bought, somehow [fit perfectly](./docs/two_stacked_magnets_fit_in_3.3mm_hole_perfectly.jpg) into the 3.3mm hole when two are stacked on each other in each hole and with super glue prepared at the bottom (no super glue between the two magnets).
 
-I chose 3.30mm instead of 3.00mm to leave some room for super glue.\
-I chose 4.04mm instead of 4.00mm to leave some room for machine error and for super glue.
+The magnets are **very** slightly extruding which does cause purple light to be slightly visible when flashlight mode is on, but it's still a [tight fit](./docs/tight_fit_despite_magnets_slightly_extruding.jpg).
+
+The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was a feature that was bothering me in the default flashlight adapter behaviour).
+
+I originally chose 4.04mm hole width but that was not enough to leave room for machine tolerance and temperature changes, so then I changed the design to 4.10mm hole to make it easier to push-in the magnets.
 
 # Process
 
@@ -29,13 +32,13 @@ I learned the recently released `FreeCAD 1.0.0`, but I gave up on the design onc
 
 I decided it's much more robust to define the 3d design with words and precise measurements than it is to start drawing like a preschool child.
 
-Therefore I had `ChatGPT o1` + `ChatGPT 4o` write Python code to generate both a `.step` file and an `.stl` file, using [this prompt](./prompt.txt).
+Therefore **for the initial version** I had `ChatGPT o1` write Python code to generate both a `.step` file and an `.stl` file, using [this prompt](./prompt.txt).
 
-I use the `.stl` file to view the design in `Microsoft Paint 3d`, I uploaded the `.step` file as-is to `Xometry` website.
+I use the `.stl` file to view the design in `Microsoft Paint 3d`, I then uploaded the `.step` file as-is to `Xometry` website.
 
 I chose standard stainless steel [settings in the website](./docs/xometry_order_settings.png) with the lowest tolerance quality.
 
-The reason I chose such a low tolerance quality is that the shape is so simple, that I expect a CNC machine to automatically know how to precisely make the cuts directly from the step file, so it's probably gonna be precise enough.
+The reason I chose such a low tolerance quality is that I'm using super glue and I made the holes slightly bigger than they need to be, so it's fine. Also, I want the CNC machine to just do everything automatically to avoice human error.
 
 # Threads
 
@@ -46,7 +49,7 @@ The part can be ordered via its [dedicated listing](./docs/sanwu_adapter_order_s
 
 The adapter is 17.55 mm in diameter, so I cut a 17.60mm hole in the cylinder of my custom design.
 
-I [cut the adapter in half](./docs/sanwu_adapter_cut_in_half.jpg) using a [diamond blade circular saw](./docs/angle_grinder/angle_grinder_readme.pdf), sand it down, and superglew the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
+I [cut the adapter in half](./docs/sanwu_adapter_cut_in_half.jpg) using a [diamond blade circular saw](./docs/angle_grinder/angle_grinder_readme.pdf), sand it down, and super glue the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
 
 This is my alternative to reverse-engineering the threads that Sanwu uses.
 
@@ -72,7 +75,7 @@ Just for general knowledge, Sanwu uses the following threading specs:
 I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
 1. 11.5mm diameter is not standard.
 2. Thread specification required English language specification, and can only exist in a step file for show (being pretty). This makes the whole process more expensive, and less automatic- it might make it hard for the CNC machine to know what to do!
-3. I can always later design another custom stainless steel piece to fit into the generic 17.60mm hole with superglew, and I can decide to make it have threads! This incurs less risk by making the components modular.
+3. I can always later design another custom stainless steel piece to fit into the generic 17.60mm hole with super glue, and I can decide to make it have threads! This incurs less risk by making the components modular.
 4. Generic- single design works as either male or female screw side. Only having to print one step file multiple times is significantly cheaper because it only requires one preparation stage for Xometry.
 
 # Recreate 3d model from code
@@ -86,8 +89,17 @@ You can decide to change parameters in [main.py](./main.py) then re-run the scri
 
 ## Run
 1. Delete the existing `.step` file and `.stl` file.
-2. Run command `python main.py` in a cmd Window in the same directory as the project folder.
-3. Use the newly created `toilet_paper_roll_with_magnet_holes.stl` and `toilet_paper_roll_with_magnet_holes.step`.
+2. Run command `python magnet_holes_01_00_01.py` in a cmd Window in the same directory as the project folder.
+3. Use the newly created `magnet_holes.stl` and `magnet_holes.step` for the male and female sides (upload to PCBWay CNC machining, or to Xometry).
 
-# Ordered and payed:
-5 units ordered https://get.xometry.eu/payments/ec0325ff-71c7-4672-9496-26f8077902b1
+# Release Notes
+
+## magnet_holes_01_00_01
+- 4.10mm diameter magnet holes for better fitting
+
+## magnet_holes_01_00_00
+[magnet_holes_01_00_00.py](./magnet_holes_01_00_00.py)\
+[Final result](./docs/xometry_final_result.jpg)
+
+- 4.04mm diameter magnet holes
+- 5 units ordered with https://get.xometry.eu/payments/ec0325ff-71c7-4672-9496-26f8077902b1
