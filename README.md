@@ -8,7 +8,7 @@ Problem is: It takes way too long to physically unscrew the flashlight adapter, 
 
 [magnet holes standard triangle language](./magnet_holes.stl)
 
-![Fully assembled](./docs/xometry_final_result.jpg)
+![Fully assembled](./docs/xometry_final_result_cropped.png)
 
 # Solution
 
