@@ -7,7 +7,7 @@ SanwuLasers™️ offers flashlight adapters that [can be screwed onto the top](
 Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
 
 [magnet holes standard triangle language](./magnet_holes.stl)\
-[final result male and female](./docs/final_xometry_male_and_female_result.jpg)
+[final result male and female](./docs/final_xometry_male_and_female_result_cropped.png)
 
 ![Fully assembled](./docs/xometry_final_result_cropped.png)
 
