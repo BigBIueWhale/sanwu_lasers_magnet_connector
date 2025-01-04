@@ -16,17 +16,17 @@ Custom order for CNC machined stainless steel part that converts the screw-on me
 
 The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
 
-The generic custom machined part has 16 small holes, each 4.10mm in diameter and 3.30mm depth.
+The generic custom machined part has 16 small holes, each 4.16mm in diameter and 3.30mm depth.
 
-It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** (apparently they're less). 
+It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** but apparently the [diameter is greater](./docs/amazon_magnet_diameter_not_as_advertized.jpg) and [height is less](./docs/amazon_magnet_height_not_as_advertized.jpg) than advertized.
 
-It just so happens that the specific magnets I bought, somehow [fit perfectly](./docs/two_stacked_magnets_fit_in_3.3mm_hole_perfectly.jpg) into the 3.3mm hole when two are stacked on each other in each hole and with super glue prepared at the bottom (no super glue between the two magnets).
+Originally I was planning for one of the sides to have 2 magnets and the other to have 1 magnet to create a male-female pairing, but since the magnets were shorter than anticipated, 2 of them [perfectly fit](./docs/two_stacked_magnets_fit_in_3.3mm_hole_perfectly.jpg) in the purposefully shallow hole.
 
 The magnets are **very** slightly extruding which does cause purple light to be slightly visible when flashlight mode is on, but it's still a [tight fit](./docs/tight_fit_despite_magnets_slightly_extruding.jpg).
 
 The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was a feature that was bothering me in the default flashlight adapter behaviour).
 
-I originally chose 4.04mm hole width but that was not enough to leave room for machine tolerance and temperature changes, so then I changed the design to 4.10mm hole to make it easier to push-in the magnets.
+I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets.
 
 # Process
 
@@ -91,17 +91,72 @@ You can decide to change parameters in [main.py](./main.py) then re-run the scri
 
 ## Run
 1. Delete the existing `.step` file and `.stl` file.
-2. Run command `python magnet_holes_01_00_01.py` in a cmd Window in the same directory as the project folder.
-3. Use the newly created `magnet_holes.stl` and `magnet_holes.step` for the male and female sides (upload to PCBWay CNC machining, or to Xometry).
+2. Run command `python magnet_holes_01_00_01.py` in a cmd window in the same directory as the project folder.
+3. Use the newly created `magnet_holes.stl` and `magnet_holes.step`. Upload to PCBWay CNC machining, or to Xometry. Order at least 2 pieces because you need male and female.
+4. Run command `python rangers_guard_sleeve_01_00_00.py` in a cmd window in the same directory as the project folder.
+5. Use the newly created `rangers_guard_sleeve.stl` and `rangers_guard_sleeve.step`. PCBWay CNC machining, or to Xometry. Order 1 piece for your [Laser Rangers](https://www.sanwulasers.com/product/laserrangers).
+
+## Assembly
+
+Take [magnets and magnet_holes piece](./docs/magnets_and_xometry_magnet_holes.jpg) and insert the magnets using the following method:
+
+1. Operate in a warm area (preferably hot plate that's greater than 40°C and lower than 75°C) so that the steel expands to the max it's every going to get.
+
+2. Wear black nitrile gloves and protective goggles (laser safety goggles work).
+
+3. Apply 1 drop of [Super glue](./docs/super_glue.jpg) into one of the 16 holes by tapping the inside bottom of the hole with the head of the nozzle.
+
+4. Quickly insert 2 magnets together into the hole. Push with fingers, then wooden skewer and if need be, quickly use vice to push in the magnets quickly before any super glue hardens.
+
+5. Quickly wipe off the top with paper towel to remove excess super glue.
+
+6. Do the same for all 16 holes in either clockwise or counter clockwise order, placing in the magnets in alternating polarities- positive hole, negative hole, positive hole, negative hole. This is so the magnetic power doesn't accumulate. Essentially, so the entire piece as a whole doesn't become significantly magnetic. Also, this make every adjacent pair of magnets attracted to each other so they're "happy to be there".
+
+7. Do this entire magnet insertion process for an additional `magnet_holes` piece (for the purpose of creating both male and female).
+
+Next, [cut Sanwu adapter](#threads) with small angle grinder such that you're left with [male and female connector](./docs/sanwu_adapter_cut_in_half.jpg).
+
+Verify that height of both male and female adapter half is less than 8.3mm. If not, grind carefully then sand down.
+
+Verify that while using the vice you haven't deformed the circularness of the male and female side, and that you haven't damaged the male or female screw mechanism- essentially just try to screw in the male side to an actual laser head, and the female side with an actual flashlight adapter to make sure it fits.
+
+Use [super glue](./docs/super_glue.jpg) to connect the male side to one of the `magnet_holes` pieces with magnets that we prepared, the the female side to the other.
+
+Let it dry, and you'll be left with the [final male and female result](./docs/final_xometry_male_and_female_result.jpg).
+
+If you want to use this for Striker laser host, you're done.
+
+If you want to use this mechanism for Laser Rangers laser host, it's recommended to take [rangers_guard_sleeve_01_00_00](#rangers_guard_sleeve_01_00_00) and super glue it onto the male `magnet_holes` part while making sure the stairs perfectly fit the stairs in the laser rangers head.
 
 # Release Notes
 
+## rangers_guard_sleeve_01_00_00
+[rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_00.py)
+
+- Designed to be attached on with super glue to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
+
+- Keeps flashlight head secure on Laser Rangers model so it can only be pulled off straight-up which is the direction the magnets are strongest in.
+
+- Fills-in ugly gap at the stairs of the **Laser Rangers** laser head- only compatible with [models 1, 2, 4, 5, 7, 8](./docs/laser_rangers_body_models.png). I recommend model 7 or model 2.
+
+- Compatible with `magnet_holes_01_00_00` and with `magnet_holes_01_00_01`
+
 ## magnet_holes_01_00_01
-- 4.10mm diameter magnet holes for better fitting
+[magnet_holes_01_00_01.py](./magnet_holes_01_00_01.py)
+
+- 4.16mm diameter magnet holes for better fitting, instead of 4.04mm
 
 ## magnet_holes_01_00_00
 [magnet_holes_01_00_00.py](./magnet_holes_01_00_00.py)\
+[Xometry raw result](./docs/xometry_raw_result.jpg)\
 [Final result](./docs/xometry_final_result.jpg)
 
 - 4.04mm diameter magnet holes
+
+- Generic- can be used with `rangers_guard_sleeve_01_00_00`.
+
+- Generic- each piece can be used with [Sanwu Adapter](#threads) male or female.
+
+- Generic- since the magnets [perfectly fit](./docs/tight_fit_despite_magnets_slightly_extruding.jpg), the male and female sides are interchangeable.
+
 - 5 units ordered with https://get.xometry.eu/payments/ec0325ff-71c7-4672-9496-26f8077902b1

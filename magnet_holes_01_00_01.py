@@ -4,7 +4,7 @@ Creates a 'toilet paper roll' shaped cylinder with:
   - Inner hole diameter: 17.6 mm (fully through)
   - Height: 8.3 mm
 Then adds 16 equally spaced magnet holes at the top:
-  - Diameter: 4.10 mm
+  - Diameter: 4.16 mm
   - Depth: 3.3 mm
   - Circle radius for hole centers: 11.4 mm
 Exports the model to both STL and STEP formats.
@@ -32,7 +32,7 @@ model = (
 
 # === 3. Drill the magnet holes around the top face ===
 #   - 16 holes
-#   - Each hole diameter: 4.10 mm
+#   - Each hole diameter: 4.16 mm
 #   - Hole depth: 3.3 mm
 #   - Hole centers on a circle of radius: 11.4 mm
 #     so they are equally spaced 360/16=22.5 degrees apart
@@ -41,7 +41,7 @@ model = (
     .faces(">Z")               # pick the top face again
     .workplane()               # new workplane for drilling
     .polarArray(radius=11.4, startAngle=0, angle=360, count=16, fill=True)  # 16 holes in a full circle
-    .hole(diameter=4.10, depth=3.3)  # create the holes as pockets in the top
+    .hole(diameter=4.16, depth=3.3)  # create the holes as pockets in the top
 )
 
 # === 4. Export the final model to both STL and STEP files ===
