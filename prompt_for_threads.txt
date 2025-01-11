@@ -1,0 +1,34 @@
+This is my hello world code for creating a 3d model step file:
+
+```python
+# Using Python 3.10.6 and ran: "pip install cadquery==2.4.0 numpy==1.23.5"
+
+# Example using CadQuery to create a cylinder model
+
+import cadquery as cq
+
+# Create a cylinder with height 50mm and radius 10mm
+cylinder_model = cq.Workplane("XY").cylinder(50, 10)
+
+# Export the model to an STL file
+output_file = "cylinder_model.stl"
+cq.exporters.export(cylinder_model, output_file)
+
+output_file
+```
+
+I want you to create a full version of this code that entirely produces the final 3d model I want based on my detailed description.
+
+I need the base cylinder to start off being 10mm height and 26mm diameter.
+
+Then put a hole through the shape: 8mm all the way though. This is the hole for the laser light to pass.
+
+On the bottom side I want to make room for a m11.5x0.5 ISO Metric thread. Cut around to leave a protruding 3mm long rod at the bottom as the basis for this thread.
+
+On the top side I want to make room for a m11.5x0.5 ISO Metric tap of depth 6mm.
+
+Make two versions while avoiding code duplications:
+One without threads and with well placed comments / text for the chinese engineers explaining exactly what dimensions of threads / taps to use.
+One with threads for visual purposes (still with those comments).
+
+Yes, it's complicated to make the standard ISO threads visually, deal with it.

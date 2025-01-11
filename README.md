@@ -77,6 +77,11 @@ Just for general knowledge, Sanwu uses the following threading specs:
   6mm depth- total of 12 threads
   ```
 
+This adheres to standard: https://www.gewinde-normen.de/en/iso-fine-thread-2.html\
+**ISO Metric Fine Thread DIN 13-3**\
+Pitch mm: 0.5\
+Nominal Diameter mm: M 11.5
+
 I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
 1. 11.5mm diameter is not standard.
 2. Thread specification required English language specification, and can only exist in a step file for show (being pretty). This makes the whole process more expensive, and less automatic- it might make it hard for the CNC machine to know what to do!
