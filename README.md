@@ -77,10 +77,13 @@ Just for general knowledge, Sanwu uses the following threading specs:
   6mm depth- total of 12 threads
   ```
 
-This adheres to standard: https://www.gewinde-normen.de/en/iso-fine-thread-2.html\
-**ISO Metric Fine Thread DIN 13-3**\
-Pitch mm: 0.5\
-Nominal Diameter mm: M 11.5
+This adheres to standard: https://www.gewinde-normen.de/en/iso-fine-thread-2.html
+```txt
+ISO Metric Fine Thread DIN 13-3
+Pitch mm: 0.5
+Nominal (major) Diameter mm: M 11.5
+```
+Issue is that the aforementioned size is not a standard combination of major diameter + pitch. Hopefully PCBWay are able to machine it.
 
 I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
 1. 11.5mm diameter is not standard.
