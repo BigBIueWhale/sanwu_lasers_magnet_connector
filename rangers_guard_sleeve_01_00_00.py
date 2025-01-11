@@ -1,6 +1,4 @@
 """
-rangers_guard_sleeve_01_00_00.py
-
 Creates a custom "guard sleeve" for the Sanwu Laser Rangers model so the
 flashlight adapter can only be pulled off directly upward. The key steps:
 
