@@ -13,7 +13,9 @@ Problem is: It takes way too long to physically unscrew the flashlight adapter, 
 
 # Solution
 
-Custom order for CNC machined stainless steel part that converts the screw-on mechanism into a magnetic mechanism!
+Custom order CNC machined stainless steel parts that convert the screw-on mechanism into a magnetic mechanism!
+
+# Technical
 
 The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
 
@@ -39,9 +41,9 @@ Therefore **for the initial version** I had `ChatGPT o1` write Python code to ge
 
 I use the `.stl` file to view the design in `Microsoft Paint 3d`, I then uploaded the `.step` file as-is to `Xometry` website.
 
-I chose standard stainless steel [settings in the website](./docs/xometry_order_settings.png) with the lowest tolerance quality.
+I chose standard stainless steel [settings in the website](./docs/xometry_order_settings.png) with a low requirement for tolerance.
 
-The reason I chose such a low tolerance quality is that I'm using super glue and I made the holes slightly bigger than they need to be, so it's fine. Also, I want the CNC machine to just do everything automatically to avoice human error.
+The reason I chose such a low tolerance quality is that I'm using super glue and I made the holes slightly bigger than they need to be, so it's fine. Also, I want the CNC machine to just do everything automatically to avoid human error.
 
 # Threads
 
