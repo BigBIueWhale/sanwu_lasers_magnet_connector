@@ -142,10 +142,14 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 
 - Compatible with `magnet_holes_01_00_00` and with `magnet_holes_01_00_01`
 
+- 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
+
 ## magnet_holes_01_00_01
 [magnet_holes_01_00_01.py](./magnet_holes_01_00_01.py)
 
 - 4.16mm diameter magnet holes for better fitting, instead of 4.04mm
+
+- 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
 
 ## magnet_holes_01_00_00
 [magnet_holes_01_00_00.py](./magnet_holes_01_00_00.py)\
