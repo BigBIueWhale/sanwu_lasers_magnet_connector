@@ -59,8 +59,7 @@ model = (
 #   - 12 holes
 #   - Each hole diameter: 4.16 mm
 #   - Hole depth: 3.3 mm
-#   - Hole centers on a circle of radius: 9.3 mm
-#     so they are equally spaced 360/16=22.5 degrees apart
+#   - Hole centers on a circle of radius: 9.3mm and are equally spaced.
 model = (
     model
     .faces(">Z")               # pick the top face again
