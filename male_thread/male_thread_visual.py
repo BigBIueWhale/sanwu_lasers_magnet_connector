@@ -25,8 +25,9 @@ model = (
     .hole(8.05)      # Through-hole 8.05 mm diameter for laser light
 )
 
-# Approximate minor diameter of m11.5x0.5 ISO Metric fine thread
-minor_diameter = 10.88657
+# Approximate minor diameter of m11.5x0.5 ISO Metric fine thread:
+# 11.5 - 2 × (5/8 × (0.5 × √3/2)) ≈ 10.9587 mm
+minor_diameter = 10.9587
 
 # --------------------------------------------------------------------------------
 # Create a 3 mm deep pocket at the bottom, leaving a base rod for the thread

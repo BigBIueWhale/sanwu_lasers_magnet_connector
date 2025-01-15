@@ -33,26 +33,26 @@ model = (
 #   - Main cylinder body of height 3.5mm (not including rod)
 #   - A 3 mm-long "rod" at the bottom (z=0..3), diameter = 11.45 mm.
 
-# 4) Shave off the TOP 1 mm of the 3 mm rod from 11.45 mm down to 10.83 mm.
+# 4) Shave off the TOP 1 mm of the 3 mm rod from 11.45 mm down to 10.90 mm.
 #    That means:
 #      - The bottom 2 mm of the rod (z=0..2) remains 11.45 mm diameter.
-#      - The top 1 mm of the rod (z=2..3) becomes 10.83 mm diameter.
+#      - The top 1 mm of the rod (z=2..3) becomes 10.90 mm diameter.
 #
-#    We'll do this by cutting a ring from radius 10.83/2 to 11.45/2
+#    We'll do this by cutting a ring from radius 10.90/2 to 11.45/2
 #    over the top 1 mm region of the rod.
-#    Minor diameter of m11.5x0.5 thread is ~10.88657mm so we'll make the base 10.83mm
-#    diameter which is slightly less than the minor diameter.
+#    Minor diameter of m11.5x0.5 thread (d₂) = 11.5 - 2 × (5/8 × (0.5 × √3/2)) ≈ 10.9587 mm
+#    so we'll make the base 10.90 diameter which is slightly smaller for tolerance purposes.
 #    This ensures that the base doesn't have to be threaded, because it's hard to thread
 #    a rod all the way so close to the flat surface.
 
 model = (
     model
-    .faces("<Z")                # Start from the bottom face
+    .faces("<Z")                  # Start from the bottom face
     .workplane()
     .transformed(offset=(0,0,-2)) # Move up 2 mm
-    .circle(11.45 / 2)          # Outer edge of the rod
-    .circle(10.83 / 2)          # New smaller diameter
-    .cutBlind(-1)                # Cut upward 1 mm
+    .circle(11.45 / 2)            # Outer edge of the rod
+    .circle(10.90 / 2)            # New smaller diameter
+    .cutBlind(-1)                 # Cut upward 1 mm
 )
 
 # === 3. Drill the magnet holes around the top face ===
