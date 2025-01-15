@@ -3,6 +3,8 @@
 
 import pyvista as pv
 
+SQUARE_HIGH_RESOLUTION = (2048, 2048)
+
 # File containing your part (STL format)
 INPUT_STL = "../male_thread_visual.stl"
 
@@ -17,7 +19,7 @@ zmid = 0.5 * (zmin + zmax)
 
 # Helper function to capture views
 def capture_view(mesh, camera_pos, camera_up, filename, show_edges=True):
-    plotter = pv.Plotter(off_screen=True)
+    plotter = pv.Plotter(off_screen=True, window_size=SQUARE_HIGH_RESOLUTION)
     plotter.enable_parallel_projection()  # Use parallel projection for technical views
     if show_edges:
         plotter.add_mesh(mesh, color='white', edge_color='black', show_edges=True, line_width=0.5)
