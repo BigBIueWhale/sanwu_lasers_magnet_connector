@@ -9,12 +9,12 @@ model = (
     .extrude(6.5)
 )
 
-# 2) Drill an 8 mm diameter through-hole from the bottom face all the way through.
+# 2) Drill an 8.05 mm diameter through-hole from the bottom face all the way through.
 model = (
     model
     .faces("<Z")       # Select the bottom face
     .workplane()
-    .hole(8)           # Through-hole 8 mm diameter for laser light
+    .hole(8.05)           # Through-hole 8.05 mm diameter for laser light
 )
 
 # 3) Create a 3 mm deep pocket at the bottom, leaving an 11.45 mm diameter rod.
@@ -30,7 +30,7 @@ model = (
 )
 
 # At this point, we have:
-#   - A main cylinder with an 8 mm hole.
+#   - Main cylinder body of height 3.5mm (not including rod)
 #   - A 3 mm-long "rod" at the bottom (z=0..3), diameter = 11.45 mm.
 
 # 4) Shave off the TOP 1 mm of the 3 mm rod from 11.45 mm down to 10.83 mm.

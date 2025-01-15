@@ -16,13 +16,13 @@ model = (
 )
 
 # --------------------------------------------------------------------------------
-# Drill an 8 mm diameter through-hole from the bottom face all the way.
+# Drill an 8.05 mm diameter through-hole from the bottom face all the way.
 # --------------------------------------------------------------------------------
 model = (
     model
     .faces("<Z")  # Select the bottom face
     .workplane()
-    .hole(8)      # Through-hole 8 mm diameter for laser light
+    .hole(8.05)      # Through-hole 8.05 mm diameter for laser light
 )
 
 # Approximate minor diameter of m11.5x0.5 ISO Metric fine thread
@@ -40,6 +40,17 @@ model = (
     .cutBlind(-3)         # Remove 3 mm upward from the bottom
 )
 
+# Make the base 1mm of the rod unthreaded, slightly thinner than even the minor diameter.
+model = (
+    model
+    .faces("<Z")                # Start from the bottom face
+    .workplane()
+    .transformed(offset=(0,0,-2)) # Move up 2 mm
+    .circle(minor_diameter / 2)   # Outer edge of the rod
+    .circle(10.83 / 2)            # New smaller diameter
+    .cutBlind(-1)                 # Cut upward 1 mm
+)
+
 # --------------------------------------------------------------------------------
 # Now create the actual thread geometry for the bottom 2 mm of the rod using
 # IsoThread from the cq_warehouse library.
@@ -54,7 +65,7 @@ pitch = 0.5
 major_diam = 11.5
 thread_length = 2
 
-iso_thread = IsoThread(
+iso_thread = cq.Solid(IsoThread(
     major_diameter=major_diam,
     pitch=pitch,
     length=thread_length,
@@ -62,7 +73,7 @@ iso_thread = IsoThread(
     hand='right',
     end_finishes=('fade', 'square'),
     simple=False
-).cq_object
+).wrapped)
 
 # By default, IsoThread is oriented with z=0..thread_length, so we can place it
 # so its bottom is at z=0. If your rod’s bottom is at z=0, you don’t need extra
