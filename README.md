@@ -19,7 +19,7 @@ Custom order CNC machined stainless steel parts that convert the screw-on mechan
 
 The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
 
-The generic custom machined part has 16 small holes, each 4.16mm in diameter and 3.30mm depth.
+The generic custom machined part has small holes, each 4.16mm in diameter and 3.30mm depth.
 
 It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** but apparently the [diameter is greater](./docs/amazon_magnet_diameter_not_as_advertized.jpg) and [height is less](./docs/amazon_magnet_height_not_as_advertized.jpg) than advertized.
 
@@ -115,13 +115,13 @@ Take [magnets and magnet_holes piece](./docs/magnets_and_xometry_magnet_holes.jp
 
 2. Wear black nitrile gloves and protective goggles (laser safety goggles work).
 
-3. Apply 1 drop of [Super glue](./docs/super_glue.jpg) into one of the 16 holes by tapping the inside bottom of the hole with the head of the nozzle.
+3. Apply 1 drop of [Super glue](./docs/super_glue.jpg) into one of the holes by tapping the inside bottom of the hole with the head of the nozzle.
 
 4. Quickly insert 2 magnets together into the hole. Push with fingers, then wooden skewer and if need be, quickly use vice to push in the magnets quickly before any super glue hardens.
 
 5. Quickly wipe off the top with paper towel to remove excess super glue.
 
-6. Do the same for all 16 holes in either clockwise or counter clockwise order, placing in the magnets in alternating polarities- positive hole, negative hole, positive hole, negative hole. This is so the magnetic power doesn't accumulate. Essentially, so the entire piece as a whole doesn't become significantly magnetic. Also, this make every adjacent pair of magnets attracted to each other so they're "happy to be there".
+6. Do the same for all holes in either clockwise or counter clockwise order, placing in the magnets in alternating polarities- positive hole, negative hole, positive hole, negative hole. This is so the magnetic power doesn't accumulate. Essentially, so the entire piece as a whole doesn't become significantly magnetic. Also, this make every adjacent pair of magnets attracted to each other so they're "happy to be there".
 
 7. Do this entire magnet insertion process for an additional `magnet_holes` piece (for the purpose of creating both male and female).
 
