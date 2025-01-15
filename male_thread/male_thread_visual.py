@@ -48,7 +48,7 @@ model = (
     .workplane()
     .transformed(offset=(0,0,-2)) # Move up 2 mm
     .circle(minor_diameter / 2)   # Outer edge of the rod
-    .circle(10.83 / 2)            # New smaller diameter
+    .circle(10.90 / 2)            # New smaller diameter
     .cutBlind(-1)                 # Cut upward 1 mm
 )
 
