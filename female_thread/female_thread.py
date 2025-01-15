@@ -11,11 +11,12 @@ model = (
 
 # 2) We're using M11.5x0.5 ISO Metric fine thread, so we'll use
 #    initial hole of 11.55mm (for tolerance).
+THROUGH_HOLE_DIAMETER = 11.55
 model = (
     model
     .faces(">Z")              # pick the top face
     .workplane()              # new workplane for the through hole
-    .hole(11.55)              # create the through hole
+    .hole(THROUGH_HOLE_DIAMETER)              # create the through hole
 )
 
 class SpecificCircularEdgeSelector(cq.selectors.Selector):
@@ -38,7 +39,7 @@ model = (
     model
     .faces(">Z")                           # pick the top face
     # keep only the circular edge(s) matching the hole diameter
-    .edges(SpecificCircularEdgeSelector(diameter=11.55))
+    .edges(SpecificCircularEdgeSelector(diameter=THROUGH_HOLE_DIAMETER))
     .chamfer(0.3)
 )
 
