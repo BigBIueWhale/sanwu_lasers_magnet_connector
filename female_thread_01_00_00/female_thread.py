@@ -11,6 +11,7 @@ model = (
 
 # 2) We're using M11.5x0.5 ISO Metric fine thread, so we'll use
 #    initial hole of 11.55mm (for tolerance).
+# TODO: This base diameter (for the hole to be threaded) makes no sense
 THROUGH_HOLE_DIAMETER = 11.55
 model = (
     model
