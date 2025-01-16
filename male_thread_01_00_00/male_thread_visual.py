@@ -9,7 +9,7 @@ from cq_warehouse.fastener import IsoThread
 #    Diameter: 24 mm (diameter)
 model = (
     cq.Workplane("XY")
-    .circle(24 / 2)
+    .circle(24.00 / 2)
     .extrude(7.30)
 )
 

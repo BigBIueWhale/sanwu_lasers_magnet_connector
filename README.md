@@ -141,6 +141,13 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 
 # Release Notes
 
+## rangers_guard_sleeve_01_00_01
+[rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)
+
+- Slightly narrower steps- so the fit onto the Laser Rangers head is more snug and secure (less dependent on screw mechanism)
+
+- Different length and internal and external diameters to fit the now smaller and thinner [male_thread](./male_thread_01_00_00/) and [female_thread](./female_thread_01_00_00/)
+
 ## rangers_guard_sleeve_01_00_00
 [rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)
 
