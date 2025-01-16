@@ -6,7 +6,7 @@ SanwuLasers™️ offers flashlight adapters that [can be screwed onto the top](
 
 Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
 
-[magnet holes standard triangle language](./magnet_holes.stl)\
+[magnet holes standard triangle language](./old/magnet_holes.stl)\
 [final result male and female](./docs/final_xometry_male_and_female_result_cropped.png)
 
 ![Fully assembled](./docs/xometry_final_result_cropped.png)
@@ -102,9 +102,9 @@ You can decide to change parameters in [main.py](./main.py) then re-run the scri
 
 ## Run
 1. Delete the existing `.step` file and `.stl` file.
-2. Run command `python magnet_holes_01_00_01.py` in a cmd window in the same directory as the project folder.
+2. Run command `python ./old/magnet_holes_01_00_01.py` in a cmd window in the same directory as the project folder.
 3. Use the newly created `magnet_holes.stl` and `magnet_holes.step`. Upload to PCBWay CNC machining, or to Xometry. Order at least 2 pieces because you need male and female.
-4. Run command `python rangers_guard_sleeve_01_00_00.py` in a cmd window in the same directory as the project folder.
+4. Run command `python ./old/rangers_guard_sleeve_01_00_00.py` in a cmd window in the same directory as the project folder.
 5. Use the newly created `rangers_guard_sleeve.stl` and `rangers_guard_sleeve.step`. PCBWay CNC machining, or to Xometry. Order 1 piece for your [Laser Rangers](https://www.sanwulasers.com/product/laserrangers).
 
 ## Assembly
@@ -142,7 +142,7 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 # Release Notes
 
 ## rangers_guard_sleeve_01_00_00
-[rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_00.py)
+[rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)
 
 - Designed to be attached on with super glue to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
 
@@ -155,14 +155,14 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 - 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
 
 ## magnet_holes_01_00_01
-[magnet_holes_01_00_01.py](./magnet_holes_01_00_01.py)
+[magnet_holes_01_00_01.py](./old/magnet_holes_01_00_01.py)
 
 - 4.16mm diameter magnet holes for better fitting, instead of 4.04mm
 
 - 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
 
 ## magnet_holes_01_00_00
-[magnet_holes_01_00_00.py](./magnet_holes_01_00_00.py)\
+[magnet_holes_01_00_00.py](./old/magnet_holes_01_00_00.py)\
 [Xometry raw result](./docs/xometry_raw_result.jpg)\
 [Final result](./docs/xometry_final_result.jpg)
 
