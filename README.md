@@ -19,7 +19,7 @@ Custom order CNC machined stainless steel parts that convert the screw-on mechan
 
 The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
 
-The generic custom machined part has small holes, each 4.16mm in diameter and 3.30mm depth.
+The custom machined parts have small holes, each 3.30mm in depth.
 
 It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** but apparently the [diameter is greater](./docs/amazon_magnet_diameter_not_as_advertized.jpg) and [height is less](./docs/amazon_magnet_height_not_as_advertized.jpg) than advertized.
 
@@ -29,7 +29,7 @@ The magnets are **very** slightly extruding which does cause purple light to be 
 
 The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was a feature that was bothering me in the default flashlight adapter behaviour).
 
-I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets.
+I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets. That was too big so I then changed the design to 4.11mm diameter for a perfect fit.
 
 # Process
 

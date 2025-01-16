@@ -1,12 +1,12 @@
 import cadquery as cq
 
 # 1) Create the main cylinder:
-#    Height: 6.5 mm (3mm for male rod + 3.5mm for magnet holes)
+#    Height: 7.30 mm (3mm for male rod + 4.3mm for magnet holes)
 #    Diameter: 24 mm (diameter)
 model = (
     cq.Workplane("XY")
     .circle(24 / 2)
-    .extrude(6.5)
+    .extrude(7.30)
 )
 
 # 2) Drill an 8.05 mm diameter through-hole from the bottom face all the way through.
@@ -14,7 +14,7 @@ model = (
     model
     .faces("<Z")       # Select the bottom face
     .workplane()
-    .hole(8.05)           # Through-hole 8.05 mm diameter for laser light
+    .hole(8.05)        # Through-hole 8.05 mm diameter for laser light
 )
 
 # 3) Create a 3 mm deep pocket at the bottom, leaving an 11.45 mm diameter rod.
@@ -30,7 +30,7 @@ model = (
 )
 
 # At this point, we have:
-#   - Main cylinder body of height 3.5mm (not including rod)
+#   - Main cylinder body of height 4.3mm (not including rod)
 #   - A 3 mm-long "rod" at the bottom (z=0..3), diameter = 11.45 mm.
 
 # 4) Shave off the TOP 1 mm of the 3 mm rod from 11.45 mm down to 10.90 mm.
@@ -55,17 +55,17 @@ model = (
     .cutBlind(-1)                 # Cut upward 1 mm
 )
 
-# === 3. Drill the magnet holes around the top face ===
-#   - 12 holes
-#   - Each hole diameter: 4.16 mm
-#   - Hole depth: 3.3 mm
-#   - Hole centers on a circle of radius: 9.3mm and are equally spaced.
+# 5) Drill the magnet holes around the top face
+#    - 12 holes
+#    - Each hole diameter: 4.11 mm (4.06 diameter magnets with 5mm tolerance)
+#    - Hole depth: 3.3 mm (still have 1mm floor)
+#    - Hole centers on a circle of radius: 9.3mm and are equally spaced.
 model = (
     model
     .faces(">Z")               # pick the top face again
     .workplane()               # new workplane for drilling
     .polarArray(radius=9.3, startAngle=0, angle=360, count=12, fill=True)  # 12 holes in a full circle
-    .hole(diameter=4.16, depth=3.3)  # create the holes as pockets in the top
+    .hole(diameter=4.11, depth=3.3)  # create the holes as pockets in the top
 )
 
 # === Export the final model to both STEP and STL files ===

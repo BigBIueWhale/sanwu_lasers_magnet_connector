@@ -4,34 +4,28 @@ import cadquery as cq
 # Currently using: cq_warehouse==0.8.0
 from cq_warehouse.fastener import IsoThread
 
-# --------------------------------------------------------------------------------
-# Create the main cylinder body
-# Height: 6.5 mm total (3 mm of "rod" + 3.5 mm for magnet holes)
-# Diameter: 24 mm
-# --------------------------------------------------------------------------------
+# 1) Create the main cylinder:
+#    Height: 7.30 mm (3mm for male rod + 4.3mm for magnet holes)
+#    Diameter: 24 mm (diameter)
 model = (
     cq.Workplane("XY")
     .circle(24 / 2)
-    .extrude(6.5)
+    .extrude(7.30)
 )
 
-# --------------------------------------------------------------------------------
-# Drill an 8.05 mm diameter through-hole from the bottom face all the way.
-# --------------------------------------------------------------------------------
+# 2) Drill an 8.05 mm diameter through-hole from the bottom face all the way through.
 model = (
     model
-    .faces("<Z")  # Select the bottom face
+    .faces("<Z")       # Select the bottom face
     .workplane()
-    .hole(8.05)      # Through-hole 8.05 mm diameter for laser light
+    .hole(8.05)        # Through-hole 8.05 mm diameter for laser light
 )
 
 # Approximate minor diameter of m11.5x0.5 ISO Metric fine thread:
 # 11.5 - 2 × (5/8 × (0.5 × √3/2)) ≈ 10.9587 mm
 minor_diameter = 10.9587
 
-# --------------------------------------------------------------------------------
-# Create a 3 mm deep pocket at the bottom, leaving a base rod for the thread
-# --------------------------------------------------------------------------------
+# 3) Create a 3 mm deep pocket at the bottom, leaving a base rod for the thread
 model = (
     model
     .faces("<Z")          # Select the bottom face
@@ -41,7 +35,7 @@ model = (
     .cutBlind(-3)         # Remove 3 mm upward from the bottom
 )
 
-# Make the base 1mm of the rod unthreaded, slightly thinner than even the minor diameter.
+# 4) Make the base 1mm of the rod unthreaded, slightly thinner than even the minor diameter.
 model = (
     model
     .faces("<Z")                # Start from the bottom face
@@ -52,16 +46,14 @@ model = (
     .cutBlind(-1)                 # Cut upward 1 mm
 )
 
-# --------------------------------------------------------------------------------
 # Now create the actual thread geometry for the bottom 2 mm of the rod using
 # IsoThread from the cq_warehouse library.
-#   - major_diameter=11.5 (nominal M11.5)
-#   - pitch=0.5
-#   - length=2
-#   - external=True => male (external) thread
-#   - end_finishes=('fade', 'square') => fade at the bottom, square at top
-#   - simple=False => full detailed thread geometry
-# --------------------------------------------------------------------------------
+# - major_diameter=11.5 (nominal M11.5)
+# - pitch=0.5
+# - length=2
+# - external=True => male (external) thread
+# - end_finishes=('fade', 'square') => fade at the bottom, square at top
+# - simple=False => full detailed thread geometry
 pitch = 0.5
 major_diam = 11.5
 thread_length = 2
@@ -81,22 +73,20 @@ iso_thread = cq.Solid(IsoThread(
 # translation. But if you want to seat it differently, use .translate((0,0,z_offset)).
 thread = iso_thread.translate((0, 0, 0))
 
-# Union the new thread geometry onto the rod portion
+# 5) Union the new thread geometry onto the rod portion
 model = model.union(thread)
 
-# --------------------------------------------------------------------------------
-# Drill the magnet holes around the TOP face (z=6.5) of the main cylinder
-#   - 12 holes
-#   - hole diameter: 4.16 mm
-#   - hole depth: 3.3 mm
-#   - holes centered on a circle radius=9.3 mm
-# --------------------------------------------------------------------------------
+# 6) Drill the magnet holes around the top face
+#    - 12 holes
+#    - Each hole diameter: 4.11 mm (4.06 diameter magnets with 5mm tolerance)
+#    - Hole depth: 3.3 mm (still have 1mm floor)
+#    - Hole centers on a circle of radius: 9.3mm and are equally spaced.
 model = (
     model
-    .faces(">Z")  # pick the top face at z=6.5
-    .workplane()
-    .polarArray(radius=9.3, startAngle=0, angle=360, count=12, fill=True)
-    .hole(diameter=4.16, depth=3.3)
+    .faces(">Z")               # pick the top face again
+    .workplane()               # new workplane for drilling
+    .polarArray(radius=9.3, startAngle=0, angle=360, count=12, fill=True)  # 12 holes in a full circle
+    .hole(diameter=4.11, depth=3.3)  # create the holes as pockets in the top
 )
 
 # --------------------------------------------------------------------------------

@@ -45,15 +45,15 @@ model = (
 
 # 4) Drill the magnet holes around the bottom face
 #    - 12 holes
-#    - Each hole diameter: 4.16 mm
-#    - Hole depth: 3.3 mm
+#    - Each hole diameter: 4.11 mm (4.06 diameter magnets with 5mm tolerance)
+#    - Hole depth: 3.3 mm (still have 1mm floor)
 #    - Hole centers on a circle of radius: 9.3mm and are equally spaced.
 model = (
     model
     .faces("<Z")               # pick the bottom face
     .workplane()               # new workplane for drilling
     .polarArray(radius=9.3, startAngle=0, angle=360, count=12, fill=True)  # 12 holes in a full circle
-    .hole(diameter=4.16, depth=3.3)  # create the holes as pockets
+    .hole(diameter=4.11, depth=3.3)  # create the holes as pockets in the top
 )
 
 # === Export the final model to both STEP and STL files ===
