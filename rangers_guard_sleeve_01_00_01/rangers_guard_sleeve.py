@@ -35,14 +35,15 @@ model = (
     .cutBlind(-10.60)      # Pocket 10.60 mm downward
 )
 
-# === 4. Cut a purposefully wider pocket (24.20 mm) from the top, 6.05 mm deep ===
-#     This overlaps only the female portion, resulting in a stepped hole.
+# === 4. Cut a purposefully wider pocket (24.20 mm) from the top, 6.15 mm deep ===
+#     This results in a stepped hole where the wider hole at the top overlaps the
+#     female portion and half of the magnet gap portion.
 model = (
     model
     .faces(">Z")
     .workplane()
     .circle(24.20 / 2.0)
-    .cutBlind(-6.05)       # Pocket 6.05 mm downward
+    .cutBlind(-6.15)       # Pocket 6.15 mm downward
 )
 
 # === 5. Cut a 25.05 mm diameter pocket 4.00 mm deep at the bottom ===
