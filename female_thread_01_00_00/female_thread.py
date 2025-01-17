@@ -40,7 +40,7 @@ class SpecificCircularEdgeSelector(cq.selectors.Selector):
             if edge.geomType() == "CIRCLE" and abs(edge.radius() * 2 - self.target_diameter) < 1e-5
         ]
 
-# Chamfer the female screw hole on top for easier male engagement
+# 3) Chamfer the female screw hole on top for easier male engagement
 model = (
     model
     .faces(">Z")                           # pick the top face
