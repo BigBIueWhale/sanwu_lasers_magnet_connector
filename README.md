@@ -47,6 +47,8 @@ The reason I chose such a low tolerance quality is that I'm using super glue and
 
 # Threads
 
+**NOTE:** In the new design with specific [male](#male_thread_01_00_00) and [female](#female_thread_01_00_00) machined threads, this entire section is irrelevant.
+
 This adapter from SanwuLasers™️ is the base of my design.\
 It already comes with [male threads](./docs/sanwu_striker_adapter_male_view.jpg) and [female threads](./docs/sanwu_striker_adapter_female_view.jpg).
 
@@ -109,6 +111,8 @@ You can decide to change parameters in [main.py](./main.py) then re-run the scri
 
 ## Assembly
 
+**NOTE:** In the new design with specific [male](#male_thread_01_00_00) and [female](#female_thread_01_00_00) machined threads, some steps can be omitted from the assembly instructions, and no angle grinder is needed.
+
 Take [magnets and magnet_holes piece](./docs/magnets_and_xometry_magnet_holes.jpg) and insert the magnets using the following method:
 
 1. Operate in a warm area (preferably hot plate that's greater than 40°C and lower than 75°C) so that the steel expands to the max it's every going to get.
@@ -140,6 +144,42 @@ If you want to use this for Striker laser host, you're done.
 If you want to use this mechanism for Laser Rangers laser host, it's recommended to take [rangers_guard_sleeve_01_00_00](#rangers_guard_sleeve_01_00_00) and super glue it onto the male `magnet_holes` part while making sure the stairs perfectly fit the stairs in the laser rangers head.
 
 # Release Notes
+
+## female_thread_01_00_00
+[female_thread.py](./female_thread_01_00_00/female_thread.py)\
+Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
+
+- Only female, not generic. With builtin female threading (screw hole) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
+
+- Smaller cylinder diameter- 24mm instead of 28mm. This is possible because that pesky Sanwu adapter used to take up 17.6mm in diameter where we couldn't place any magnets.
+
+- Height- 6mm instead of 8.3mm. Small improvement to bulkiness in addition to the smaller male piece.
+
+- To be utilized with [rangers_guard_sleeve_01_00_00](#rangers_guard_sleeve_01_00_00) instead of [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01).
+
+- [Technical drawing](./female_thread_01_00_00/technical_drawing/technical_drawing.png) so that PCBWay can correctly manufacture the threads.
+
+- 12 magnet holes instead of 16 (because we're now smaller). Should still be strong enough.
+
+- 4.16mm magnet holes diameter was too big so I changed the design to 4.11mm diameter for a perfect fit.
+
+## male_thread_01_00_00
+[male_thread.py](./male_thread_01_00_00/male_thread.py)\
+Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
+
+- Only male, not generic. With builtin male threading (screw) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
+
+- Smaller cylinder diameter- 24mm instead of 28mm. This is possible because that pesky Sanwu adapter used to take up 17.6mm in diameter where we couldn't place any magnets.
+
+- Height- 4.3mm (not including male thread rod) instead of 8.3mm. This makes the entire assembled system less bulky.
+
+- To be utilized with [rangers_guard_sleeve_01_00_00](#rangers_guard_sleeve_01_00_00) instead of [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01).
+
+- [Technical drawing](./male_thread_01_00_00/technical_drawing/technical_drawing.png) so that PCBWay can correctly manufacture the threads.
+
+- 12 magnet holes instead of 16 (because we're now smaller). Should still be strong enough.
+
+- 4.16mm magnet holes diameter was too big so I changed the design to 4.11mm diameter for a perfect fit.
 
 ## rangers_guard_sleeve_01_00_01
 [rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)
