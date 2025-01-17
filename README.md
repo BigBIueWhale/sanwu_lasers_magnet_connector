@@ -148,8 +148,6 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 
 - Different length and internal and external diameters to fit the now smaller and thinner [male_thread](./male_thread_01_00_00/) and [female_thread](./female_thread_01_00_00/)
 
-- Add decorative bezel (which we can do, now that the sleeve has thicker walls)
-
 ## rangers_guard_sleeve_01_00_00
 [rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)
 

@@ -8,13 +8,13 @@ Exports the final model to STL and STEP.
 import cadquery as cq
 
 CYLINDER_DIAMETER = 29.00 # same as diameter of Laser Rangers head base
+CYLINDER_HEIGHT = 16.90 # 4.3mm male + 6mm female + 0.3mm gap between them + 6.3mm for both stairs
 
 # === 1. Create the main cylinder ===
-#    - Height = 16.90 mm (4.3mm male + 6mm female + 0.3mm gap between them + 6.3mm for both stairs)
 model = (
     cq.Workplane("XY")
     .circle(CYLINDER_DIAMETER / 2.0)
-    .extrude(16.90)
+    .extrude(CYLINDER_HEIGHT)
 )
 
 # === 2. Create a through-hole of 21.05 mm diameter from bottom to top ===
@@ -56,9 +56,6 @@ model = (
     .circle(25.05 / 2.0)
     .cutBlind(-4.00)       # Pocket 4 mm upward from bottom
 )
-
-# TODO: Add a decorative bezel-like structure (circle) around the outer circumference of
-# the guard sleeve, in a way that will be simple to automatically machine.
 
 # === Export the final model to both STEP and STL files ===
 output_file_step = "rangers_guard_sleeve.step"
