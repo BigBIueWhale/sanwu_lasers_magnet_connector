@@ -9,15 +9,20 @@ model = (
     .extrude(6.00)
 )
 
+# Minor diameter of M11.5x0.5 ISO Metric fine thread
+# Calculation: (d₂) = 11.5 - 2 × (5/8 × (0.5 × √3/2))
+# NOMINAL_MINOR_DIAMETER = 10.9587
+
 # 2) We're using M11.5x0.5 ISO Metric fine thread, so we'll use
-#    initial hole of 11.55mm (for tolerance).
-# TODO: This base diameter (for the hole to be threaded) makes no sense
-THROUGH_HOLE_DIAMETER = 11.55
+#    initial hole of 10.95mm.
+#    That's just good enough for the threading tool to dig in.
+#    Any number from 10.90 - 10.96 could probably work.
+THROUGH_HOLE_DIAMETER = 10.95
 model = (
     model
-    .faces(">Z")              # pick the top face
-    .workplane()              # new workplane for the through hole
-    .hole(THROUGH_HOLE_DIAMETER)              # create the through hole
+    .faces(">Z")                 # pick the top face
+    .workplane()                 # new workplane for the through hole
+    .hole(THROUGH_HOLE_DIAMETER) # create the through hole
 )
 
 class SpecificCircularEdgeSelector(cq.selectors.Selector):
@@ -35,7 +40,7 @@ class SpecificCircularEdgeSelector(cq.selectors.Selector):
             if edge.geomType() == "CIRCLE" and abs(edge.radius() * 2 - self.target_diameter) < 1e-5
         ]
 
-# Chamfer the female screw hole on top for easier male insertion
+# Chamfer the female screw hole on top for easier male engagement
 model = (
     model
     .faces(">Z")                           # pick the top face
