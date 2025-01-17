@@ -189,7 +189,8 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 - Different length and internal and external diameters to fit the now smaller and thinner [male_thread](./male_thread_01_00_00/) and [female_thread](./female_thread_01_00_00/)
 
 ## rangers_guard_sleeve_01_00_00
-[rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)
+[rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)\
+[PCBWay raw result](./docs/pcbway_magnet_holes_and_guard_sleeve.jpg)
 
 - Designed to be attached on with super glue to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
 
@@ -202,7 +203,8 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 - 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
 
 ## magnet_holes_01_00_01
-[magnet_holes_01_00_01.py](./old/magnet_holes_01_00_01.py)
+[magnet_holes_01_00_01.py](./old/magnet_holes_01_00_01.py)\
+[PCBWay raw result](./docs/pcbway_magnet_holes_and_guard_sleeve.jpg)
 
 - 4.16mm diameter magnet holes for better fitting, instead of 4.04mm
 
