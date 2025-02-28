@@ -147,6 +147,7 @@ If you want to use this mechanism for Laser Rangers laser host, it's recommended
 
 ## female_thread_01_00_00
 [female_thread.py](./female_thread_01_00_00/female_thread.py)\
+[PCBWay raw result](./docs/pcbway_female_thread_01_00_00_raw.jpg)\
 Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - Only female, not generic. With builtin female threading (screw hole) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
@@ -165,6 +166,8 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 ## male_thread_01_00_00
 [male_thread.py](./male_thread_01_00_00/male_thread.py)\
+[PCBWay raw result top](./docs/pcbway_male_thread_01_00_00_raw.jpg)\
+[PCBWay raw result bottom](./docs/pcbway_male_female_threads_01_00_00_raw.jpg)\
 Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - Only male, not generic. With builtin male threading (screw) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
@@ -183,6 +186,7 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 ## rangers_guard_sleeve_01_00_01
 [rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)
+[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01_raw.jpg)
 
 - Slightly narrower steps- so the fit onto the Laser Rangers head is more snug and secure (less dependent on screw mechanism)
 
@@ -190,7 +194,7 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 ## rangers_guard_sleeve_01_00_00
 [rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)\
-[PCBWay raw result](./docs/pcbway_magnet_holes_and_guard_sleeve.jpg)
+[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01.jpg)
 
 - Designed to be attached on with super glue to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
 
