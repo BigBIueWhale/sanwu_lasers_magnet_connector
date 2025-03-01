@@ -1,66 +1,94 @@
 # Problem Statement
 
-SanwuLasers™️ Lasers such as Striker, Challenger II, Laser Rangers all have option for high powered blue diode (~7 watts).
+SanwuLasers™️ Lasers such as Striker, Challenger II, "Laser Rangers" all have option for high powered blue diode (~7 watts).
 
-SanwuLasers™️ offers flashlight adapters that [can be screwed onto the top](./docs/laser_and_flashlight_adapter.jpg). It's generic, the flashlight adapter fits all of the aforementioned host types.
+SanwuLasers™️ offers flashlight adapters that [can be screwed onto the laser head](./docs/laser_and_flashlight_adapter.jpg). It's generic, the flashlight adapter fits all of the aforementioned host types.
 
 Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
 
-[magnet holes standard triangle language](./old/magnet_holes.stl)\
-[final result male and female](./docs/final_xometry_male_and_female_result_cropped.png)
-
-![Fully assembled](./docs/xometry_final_result_cropped.png)
+![Fully assembled](./docs/pcbway_threads_01_00_01_final_result.png)
 
 # Solution
 
 Custom order CNC machined stainless steel parts that convert the screw-on mechanism into a magnetic mechanism!
 
-# Technical
+## Manufacture with PCBWay CNC
 
-The flashlight adapter can be ordered with an [Adapter for striker](#threads). This adapter is super useful because it's already threaded with male and female sides.
+### Disclaimer
 
-The custom machined parts have small holes, each 3.30mm in depth.
+The current [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01) piece is only compatible with Sanwu Laser Rangers with [body models 1, 2, 4, 5, 7, 8](./docs/laser_rangers_body_models.png). I recommend model 7 or model 2.
 
-It just so happens that in practice, my choice of 3.30mm depth works with the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose, which according to the listing are **2mm in height** but apparently the [diameter is greater](./docs/amazon_magnet_diameter_not_as_advertized.jpg) and [height is less](./docs/amazon_magnet_height_not_as_advertized.jpg) than advertized.
+### Price
+Price overview of [January 2025 order](./docs/pcbway_order_price_01_00_00.png) containing 3 items [male_thread_01_00_00](#male_thread_01_00_00) + [female_thread_01_00_00](#female_thread_01_00_00) + [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01):
+1. **Items**: $113.73 USD (= ₪405.52 New Israeli Shekels)
+2. **Shipping Fedex to Israel**: $40 USD (= ₪142.62 New Israeli Shekels)
+3. **Israel customs import tax 🖕**: ₪235.46 New Israeli Shekels.\
+Automatically charged by FEDEX CAYMAN ISLANDS same day as order arrival because I have a Fedex account.
 
-Originally I was planning for one of the sides to have 2 magnets and the other to have 1 magnet to create a male-female pairing, but since the magnets were shorter than anticipated, 2 of them [perfectly fit](./docs/two_stacked_magnets_fit_in_3.3mm_hole_perfectly.jpg) in the purposefully shallow hole.
+**Total**: ~ ₪783.6 New Israeli Shekels when ordering to Israel.
 
-The magnets are **very** slightly extruding which does cause purple light to be slightly visible when flashlight mode is on, but it's still a [tight fit](./docs/tight_fit_despite_magnets_slightly_extruding.jpg).
+### Order
 
-The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was a feature that was bothering me in the default flashlight adapter behaviour).
+PCBWay CNC service has shown ability to successfully manufacture [the threads](#threads) needed for the parts in this project (as of February 2025), but they don't guarantee successful manufacture of non-standard threads.
 
-I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets. That was too big so I then changed the design to 4.11mm diameter for a perfect fit.
+1. Sign-in to your PCBWay account, and upload each step file to [PCBWay CNC machining](./docs/pcbway_cnc_machining_upload.png). Start with uploading only [male_thread.step](./male_thread_01_00_00/male_thread.step).
 
-# Process
+2. For all parts, choose material [stainless steel 303](./docs/pcbway_choose_stainless_steel_303.png).
 
-I learned the recently released `FreeCAD 1.0.0`, but I gave up on the design once I understood that the software requires the user to draw shapes with my laptop's touchpad. I'm not an artist 🎨🧑‍🎨.
+3. For the `male_thread` and `female_thread` parts, click "Yes" on [Do your parts need to tap threads?](./docs/pcbway_click_yes_on_threads_and_tapped_holes.png)\
+A [pop-up menu](./docs/pcbway_upload_technical_drawing.png) will appear- upload the relevant technical drawing for the current piece: [male_thread technical drawing](./male_thread_01_00_00/technical_drawing/technical_drawing.png) / [female_thread technical drawing](./female_thread_01_00_00/technical_drawing/technical_drawing.png).\
+Leave `Inserts` marked "No" because our parts don't have any inserts.
 
-I decided it's much more robust to define the 3d design with words and precise measurements than it is to start drawing like a preschool child.
+4. For all parts, choose "Surface Finish" -> `Standard (As-Milled) (Ra 125μin)`.
 
-Therefore **for the initial version** I had `ChatGPT o1` write Python code to generate both a `.step` file and an `.stl` file, using [this prompt](./prompt.txt).
+5. For the `male_thread` and `female_thread` parts, choose "Surface Roughness" -> `125uin/3.2um Ra`.\
+You can't change the default surface surface finish on `rangers_guard_sleeve` because we don't have a technical drawing for it.
 
-I use the `.stl` file to view the design in `Microsoft Paint 3d`, I then uploaded the `.step` file as-is to `Xometry` website.
+6. For all parts, choose product description [robot parts](./docs/pcbway_product_description_robot_parts.png) for customs purposes.\
+Not sure if that's the best thing to report for Israeli customs but that's the option I've been choosing.
 
-I chose standard stainless steel [settings in the website](./docs/xometry_order_settings.png) with a low requirement for tolerance.
+7. **Repeat steps 2 -> 6** for [female_thread.step](./female_thread_01_00_00/female_thread.step) and then again for [rangers_guard_sleeve.step](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.step).\
+Fill in the items for all 3 orders in the same window, and each time scroll down and [select additional files](./docs/pcbway_select_additional_step_files.png).
 
-The reason I chose such a low tolerance quality is that I'm using super glue and I made the holes slightly bigger than they need to be, so it's fine. Also, I want the CNC machine to just do everything automatically to avoid human error.
+8. Click botton [submit request](./docs/pcbway_ready_to_submit_request.png).
+
+9. After ~24 hours PCBWay will supply you with a price quote- hopefully no higher than initially estimated. Then you'll have the option to make the order (after a human has viewed your request).
+
+10. Once you receive the parts, follow [Assembly](#assembly) steps.
+
+# Development Process
+
+Classical GUI-based CAD softwares are problematic for multiple reasons:
+
+1. Sometimes requires user to draw shapes like an artist 🎨🧑‍🎨 instead of using precise definitions.
+
+2. Write-only designs. A simple change in a basic parameter can require starting the design from scratch.
+
+3. Cost money / require online connection- **FreeCAD 1.0.0** is no good yet. Wasn't able to find option to place multiple evenly-spaced holes around a radius.
+
+4. Not text. Can you search "4.11" and change all occurences to a larger / smaller value? Can you ask ChatGPT for help with your design?
+
+I decided it's more robust to define the 3d design with words and precise measurements than it is to use a GUI software.
+
+Therefore I helped `ChatGPT o1` use Python library `import cadquery as cq` to create my 3d designs.
+
+# Magnets
+
+The custom machined male and female parts have 12 holes each, 3.30mm depth and 4.11mm diameter.
+
+These sizes were fine tuned for a stack of two of the [neodymium disc magnets](./docs/neodymium_magnets_amazon_listing.png) I chose.
+
+According to the listing these are **2mm in height** but notice that the [diameter is greater](./docs/amazon_magnet_diameter_not_as_advertized.jpg) and [height is much less](./docs/amazon_magnet_height_not_as_advertized.jpg) than advertized.
+
+When stacking two magnets per hole, the magnets are **very** slightly extruding (0.15mm), for total of 0.3mm extra [gap created by the magnets](./docs/tight_fit_despite_magnets_slightly_extruding.jpg).
+
+The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was always a feature that was bothering me in the default flashlight adapter behaviour).
+
+I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets. I then changed the design to 4.11mm diameter for a tight fit- so you now have to push-in each bottom magnet with a vice.
 
 # Threads
 
-**NOTE:** In the new design with specific [male](#male_thread_01_00_00) and [female](#female_thread_01_00_00) machined threads, this entire section is irrelevant.
-
-This adapter from SanwuLasers™️ is the base of my design.\
-It already comes with [male threads](./docs/sanwu_striker_adapter_male_view.jpg) and [female threads](./docs/sanwu_striker_adapter_female_view.jpg).
-
-The part can be ordered via its [dedicated listing](./docs/sanwu_adapter_order_separately.png) on the website, or as part of the [flashlight converter listing](./docs/sanwu_adapter_in_flashlight_converter_listing.png).
-
-The adapter is 17.55 mm in diameter, so I cut a 17.60mm hole in the cylinder of my custom design.
-
-I [cut the adapter in half](./docs/sanwu_adapter_cut_in_half.jpg) using a [diamond blade circular saw](./docs/angle_grinder/angle_grinder_readme.pdf), sand it down, and super glue the male part into the large hole in one of my generic custom machined parts, and the female part of the adapter from Sanwu into another unit of my generic custom machined part.
-
-This is my alternative to reverse-engineering the threads that Sanwu uses.
-
-Just for general knowledge, Sanwu uses the following threading specs:
+Sanwu uses the following threading specs for the laser head and attachments:
 
 - Male:
   ```txt
@@ -85,63 +113,67 @@ ISO Metric Fine Thread DIN 13-3
 Pitch mm: 0.5
 Nominal (major) Diameter mm: M 11.5
 ```
-Issue is that the aforementioned size is not a standard combination of major diameter + pitch. Hopefully PCBWay are able to machine it.
-
-I chose to use threads from an existing SanwuLasers™️ adapter instead of printing my custom part [with designed threads](./docs/attempt_design_screw.png) for multiple reasons:
-1. 11.5mm diameter is not standard.
-2. Thread specification required English language specification, and can only exist in a step file for show (being pretty). This makes the whole process more expensive, and less automatic- it might make it hard for the CNC machine to know what to do!
-3. I can always later design another custom stainless steel piece to fit into the generic 17.60mm hole with super glue, and I can decide to make it have threads! This incurs less risk by making the components modular.
-4. Generic- single design works as either male or female screw side. Only having to print one step file multiple times is significantly cheaper because it only requires one preparation stage for Xometry.
+Issue is that the aforementioned size is not a standard combination of **major diameter** + **pitch**.\
+PCBWay CNC was able to machine it- because supposedly it's a standard size in China.
 
 # Recreate 3d model from code
 
-You can decide to change parameters in [main.py](./main.py) then re-run the script to update the design files.
+You can decide to change parameters in any of [male_thread.py](./male_thread_01_00_00/male_thread.py), [female_thread.py](./female_thread_01_00_00/female_thread.py), [rangers_guard_sleeve.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py) then re-run the script to update the design files.
+
+Always update [male_thread_visual.py](./male_thread_01_00_00/male_thread_visual.py) in the same way you updated [male_thread.py](./male_thread_01_00_00/male_thread.py).\
+Always update [female_thread_visual.py](./female_thread_01_00_00/female_thread_visual.py) in the same way you updated [female_thread.py](./female_thread_01_00_00/female_thread.py).
+
+If you made a visual change to [male_thread.py](./male_thread_01_00_00/male_thread.py) or [female_thread.py](./female_thread_01_00_00/female_thread.py) then you should update [technical_drawing.png](./male_thread_01_00_00/technical_drawing/technical_drawing.png) / [technical_drawing.png](./female_thread_01_00_00/technical_drawing/technical_drawing.png) in **Microsoft Paint**.
+
+The `XX_visual.py` files exist solely for technical drawing purposes- and each generates a `XX_visual.stl` file.\
+Feel free to use [create_images.py](./male_thread_01_00_00/technical_drawing/create_images.py) / [create_images.py](./female_thread_01_00_00/technical_drawing/create_images.py) to generate updated images for use in the the technical drawing you're updating.
 
 ## Requirements
 - Tested on Windows 11 Pro 23H2
 - Ran with Python 3.10.6
 - Specific versions chose: `pip install cadquery==2.4.0 numpy==1.23.5`
 
-## Run
-1. Delete the existing `.step` file and `.stl` file.
-2. Run command `python ./old/magnet_holes_01_00_01.py` in a cmd window in the same directory as the project folder.
-3. Use the newly created `magnet_holes.stl` and `magnet_holes.step`. Upload to PCBWay CNC machining, or to Xometry. Order at least 2 pieces because you need male and female.
-4. Run command `python ./old/rangers_guard_sleeve_01_00_00.py` in a cmd window in the same directory as the project folder.
-5. Use the newly created `rangers_guard_sleeve.stl` and `rangers_guard_sleeve.step`. PCBWay CNC machining, or to Xometry. Order 1 piece for your [Laser Rangers](https://www.sanwulasers.com/product/laserrangers).
-
 ## Assembly
 
-**NOTE:** In the new design with specific [male](#male_thread_01_00_00) and [female](#female_thread_01_00_00) machined threads, some steps can be omitted from the assembly instructions, and no angle grinder is needed.
+1. Prepare [the male the female pieces](./docs/pcbway_male_female_threads_01_00_00_raw.jpg), [the magnets](./docs/magnets_box_findmag.jpg), and a vice.
 
-Take [magnets and magnet_holes piece](./docs/magnets_and_xometry_magnet_holes.jpg) and insert the magnets using the following method:
+2. Insert a stack of 2 magnets with your hands into one of the holes- it won't push-in all the way and the top magnet will stick ~1mm out of the hole (as opposed to ~0.15mm when pushed in all the way).
 
-1. Operate in a warm area (preferably hot plate that's greater than 40°C and lower than 75°C) so that the steel expands to the max it's every going to get.
+3. Use a vice to push the stack all the way down- the bottom magnet is now stuck down there and will never come out, no glue needed.\
+The top magnet is slightly sticking out (only ~0.15mm) and in practice is loose.
 
-2. Wear black nitrile gloves and protective goggles (laser safety goggles work).
+4. Use a stack of magnets to pull out the top magnet. If it comes out- good!\
+If the top magnet doesn't come out by using attraction (due to machining tolerances) even when the entire piece is heated to 50° celsius (expanding the steel), that means we don't have to use glue for that hole.
 
-3. Apply 1 drop of [Super glue](./docs/super_glue.jpg) into one of the holes by tapping the inside bottom of the hole with the head of the nozzle.
+5. Repeat steps 2 -> 4 for every hole in both pieces male and female. Insert the magnets into the holes in either clockwise or counter clockwise order, placing in the magnets in **alternating polarities**- positive hole, negative hole, positive hole, negative hole. This is so the magnetic power doesn't accumulate. Essentially, so the entire piece as a whole doesn't become significantly magnetic. Also, this make every adjacent pair of magnets attracted to each other so they're "happy to be there".\
+We have now finished pushing-in a total of 24 magnets to the bottom of the 24 holes- and they're mechanically held in place quite tightly- and in the correct polarities.
 
-4. Quickly insert 2 magnets together into the hole. Push with fingers, then wooden skewer and if need be, quickly use vice to push in the magnets quickly before any super glue hardens.
+6. Wear black nitrile gloves and protective goggles (laser safety goggles work)- and prepare the [super glue](./docs/good_super_glue_brand.jpg).\
+Prepare paper towel as well to wipe off excess super glue. Move entire work area to baking paper surface to avoid sticking.\
+Keep a vice nearby just in case.
 
-5. Quickly wipe off the top with paper towel to remove excess super glue.
+7. **Note:** If a bottom magnet is loose in its hole (due to machining mishaps)- then you can use super glue on the entire stack of 2 magnets in one push. **Never use super glue more than once per hole** because that would cause an unreparable gap between the bottom magnet and the top magnet (due to the dried super glue) then you'll have to throw away the entire piece (I say this from experience). 
 
-6. Do the same for all holes in either clockwise or counter clockwise order, placing in the magnets in alternating polarities- positive hole, negative hole, positive hole, negative hole. This is so the magnetic power doesn't accumulate. Essentially, so the entire piece as a whole doesn't become significantly magnetic. Also, this make every adjacent pair of magnets attracted to each other so they're "happy to be there".
+8. Apply 1 drop of super glue into one of the holes by tapping the bottom magnet of the hole with the head of the nozzle.
 
-7. Do this entire magnet insertion process for an additional `magnet_holes` piece (for the purpose of creating both male and female).
+9. Hold the stack of magnets in the correct polarity for the hole, and quickly insert the top magnet and slide off the rest of the stack of magnets (such that now a stack of 2 magnets is in the hole). Quickly wipe the bottom of the magnet stack on paper towel to avoid the negative effect of excess super glue contaminating the magnet stack.\
+Immediately push down hard on the just-inserted magnet with the same paper towel while rubbing away excess super glue.\
+If even when pushing down with paper towel you see that the magnet isn't pushed-in all the way: use a vice ASAP. If only a minute has passed you might still have a chance to push the top magnet down to stop it from permanently sticking out.
 
-Next, [cut Sanwu adapter](#threads) with small angle grinder such that you're left with [male and female connector](./docs/sanwu_adapter_cut_in_half.jpg).
+10. Don't worry, you can reuse the paper towel because super glue immediately dries when exposed to paper towel. However- after each magnet insertion make sure to wipe off any drips of liquid super glue that may have fallen onto the baking paper's surface.
 
-Verify that height of both male and female adapter half is less than 8.3mm. If not, grind carefully then sand down.
+11. Repeat steps 7 -> 10 for each of the 24 holes.
 
-Verify that while using the vice you haven't deformed the circularness of the male and female side, and that you haven't damaged the male or female screw mechanism- essentially just try to screw in the male side to an actual laser head, and the female side with an actual flashlight adapter to make sure it fits.
+12. Take a [rangers_guard_sleeve](#rangers_guard_sleeve_01_00_00) and the [male_thread](#male_thread_01_00_00) piece you just inserted 12 pairs of magnets into. Practice sliding the [male_thread](#male_thread_01_00_00) piece [screw side down](./docs/guard_sleeve_01_00_01_rangers_head.jpg) into the top of the [rangers_guard_sleeve](#rangers_guard_sleeve_01_00_00) piece.\
+It's actually not that easy to push the piece [all the way down](./docs/guard_sleeve_01_00_01_assembled_bottom_view.jpg) because of the tight tolerance.\
+Prepare Q-Tips and paper towel.
 
-Use [super glue](./docs/super_glue.jpg) to connect the male side to one of the `magnet_holes` pieces with magnets that we prepared, the the female side to the other.
+13. Precisely apply a small amount of super glue to [the inside of the bottom ring](./docs/guard_sleeve_01_00_01_inside_of_bottom_ring.jpg) then quickly slide-in the [male_thread](#male_thread_01_00_00) all the way down.
 
-Let it dry, and you'll be left with the [final male and female result](./docs/final_xometry_male_and_female_result.jpg).
+14. Very quickly start wiping the [top ring](./docs/guard_sleeve_01_00_01_top_ring.jpg) with paper towel. Just as quickly [wipe the bottom](./docs/guard_sleeve_01_00_01_area_to_wipe.jpg) with Q-tips to avoid any significant width of excess super glue from hardening.
 
-If you want to use this for Striker laser host, you're done.
-
-If you want to use this mechanism for Laser Rangers laser host, it's recommended to take [rangers_guard_sleeve_01_00_00](#rangers_guard_sleeve_01_00_00) and super glue it onto the male `magnet_holes` part while making sure the stairs perfectly fit the stairs in the laser rangers head.
+15. If you failed to push all the way down (and the super glue hardened), push the [male_thread](#male_thread_01_00_00) out of the [rangers_guard_sleeve](#rangers_guard_sleeve_01_00_00) using a vice. Optionally, take [the female side](./docs/sanwu_striker_adapter_female_view.jpg) of a [Sanwu adapter for striker](./docs/sanwu_adapter_order_separately.png) to [gain leverage](./docs/gain_leverage.jpg) with the vice (without damaging our machined part).\
+Finally scrape off the previously-applied super glue using a needle or other sharp metal rod, or by pushing in-and-out the [male_thread](#male_thread_01_00_00). Then try again to repeat steps 13 -> 14.
 
 # Release Notes
 
@@ -194,9 +226,9 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 ## rangers_guard_sleeve_01_00_00
 [rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)\
-[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01.jpg)
+[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01_raw.jpg)
 
-- Designed to be attached on with super glue to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
+- Designed to be attached on with [super glue](./docs/bad_super_glue_brand.jpg) to a `magnet_holes` piece (to the male side that's screwed onto the laser head).
 
 - Keeps flashlight head secure on Laser Rangers model so it can only be pulled off straight-up which is the direction the magnets are strongest in.
 
