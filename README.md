@@ -1,5 +1,7 @@
 # Problem Statement
 
+**Disclaimer:** This project is not affiliated with SanwuLasers™️ company.
+
 SanwuLasers™️ Lasers such as Striker, Challenger II, "Laser Rangers" all have option for high powered blue diode (~7 watts).
 
 SanwuLasers™️ offers flashlight adapters that [can be screwed onto the laser head](./docs/laser_and_flashlight_adapter.jpg). It's generic, the flashlight adapter fits all of the aforementioned host types.
@@ -10,13 +12,14 @@ Problem is: It takes way too long to physically unscrew the flashlight adapter, 
 
 # Solution
 
-Custom order CNC machined stainless steel parts that convert the screw-on mechanism into a magnetic mechanism!
+[Manufacture](#manufacture-with-pcbway-cnc) and [assemble](#assembly) a stainless steel adapter, converting the screw-on mechanism into  a robust magnetic mechanism.
 
 ## Manufacture with PCBWay CNC
 
-### Disclaimer
+### Compatibility
 
-The current [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01) piece is only compatible with Sanwu Laser Rangers with [body models 1, 2, 4, 5, 7, 8](./docs/laser_rangers_body_models.png). I recommend model 7 or model 2.
+The current [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01) piece is only compatible with Sanwu **"Laser Rangers"** with [body models 1, 2, 4, 5, 7, 8](./docs/laser_rangers_body_models.png) due to [the 2-stair design](./docs/guard_sleeve_01_00_01_rangers_head.jpg).\
+I recommend body model 7 or model 2, they have good grip ✊.
 
 ### Price
 Price overview of [January 2025 order](./docs/pcbway_order_price_01_00_00.png) containing 3 items [male_thread_01_00_00](#male_thread_01_00_00) + [female_thread_01_00_00](#female_thread_01_00_00) + [rangers_guard_sleeve_01_00_01](#rangers_guard_sleeve_01_00_01):
