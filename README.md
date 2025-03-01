@@ -217,7 +217,7 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 - 4.16mm magnet holes diameter was too big so I changed the design to 4.11mm diameter for a perfect fit.
 
 ## rangers_guard_sleeve_01_00_01
-[rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)
+[rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)\
 [PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01_raw.jpg)
 
 - Slightly narrower steps- so the fit onto the Laser Rangers head is more snug and secure (less dependent on screw mechanism)
