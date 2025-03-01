@@ -4,7 +4,7 @@ SanwuLasers™️ Lasers such as Striker, Challenger II, "Laser Rangers" all hav
 
 SanwuLasers™️ offers flashlight adapters that [can be screwed onto the laser head](./docs/laser_and_flashlight_adapter.jpg). It's generic, the flashlight adapter fits all of the aforementioned host types.
 
-Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back in place 🧲.
+Problem is: It takes way too long to physically unscrew the flashlight adapter, and it's way too annoying to screw it back on. It should be possible to just pull it off, and snap it right back into place 🧲.
 
 ![Fully assembled](./docs/pcbway_threads_01_00_01_final_result.png)
 
@@ -31,7 +31,7 @@ Automatically charged by FEDEX CAYMAN ISLANDS same day as order arrival because 
 
 PCBWay CNC service has shown ability to successfully manufacture [the threads](#threads) needed for the parts in this project (as of February 2025), but they don't guarantee successful manufacture of non-standard threads.
 
-1. Sign-in to your PCBWay account, and upload each step file to [PCBWay CNC machining](./docs/pcbway_cnc_machining_upload.png). Start with uploading only [male_thread.step](./male_thread_01_00_00/male_thread.step).
+1. Sign-in to your PCBWay account, and upload each step file to [PCBWay CNC machining](./docs/pcbway_cnc_machining_upload.png). Start by uploading [male_thread.step](./male_thread_01_00_00/male_thread.step).
 
 2. For all parts, choose material [stainless steel 303](./docs/pcbway_choose_stainless_steel_303.png).
 
@@ -44,7 +44,7 @@ Leave `Inserts` marked "No" because our parts don't have any inserts.
 5. For the `male_thread` and `female_thread` parts, choose "Surface Roughness" -> `125uin/3.2um Ra`.\
 You can't change the default surface surface finish on `rangers_guard_sleeve` because we don't have a technical drawing for it.
 
-6. For all parts, choose product description [robot parts](./docs/pcbway_product_description_robot_parts.png) for customs purposes.\
+6. For all parts, choose product description [robot components](./docs/pcbway_product_description_robot_parts.png) for import/customs purposes.\
 Not sure if that's the best thing to report for Israeli customs but that's the option I've been choosing.
 
 7. **Repeat steps 2 -> 6** for [female_thread.step](./female_thread_01_00_00/female_thread.step) and then again for [rangers_guard_sleeve.step](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.step).\
