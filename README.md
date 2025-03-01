@@ -135,7 +135,7 @@ Feel free to use [create_images.py](./male_thread_01_00_00/technical_drawing/cre
 
 ## Assembly
 
-1. Prepare [the male the female pieces](./docs/pcbway_male_female_threads_01_00_00_raw.jpg), [the magnets](./docs/magnets_box_findmag.jpg), and a vice.
+1. Prepare [the male & female pieces](./docs/pcbway_male_female_threads_01_00_00_raw.jpg), [the magnets](./docs/magnets_box_findmag.jpg), and a vice.
 
 2. Insert a stack of 2 magnets with your hands into one of the holes- it won't push-in all the way and the top magnet will stick ~1mm out of the hole (as opposed to ~0.15mm when pushed in all the way).
 
