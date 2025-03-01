@@ -180,7 +180,8 @@ Finally scrape off the previously-applied super glue using a needle or other sha
 ## female_thread_01_00_00
 [female_thread.py](./female_thread_01_00_00/female_thread.py)\
 [PCBWay raw result](./docs/pcbway_female_thread_01_00_00_raw.jpg)\
-Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
+Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)\
+[Final result](./docs/pcbway_threads_01_00_01_final_result.png)
 
 - Only female, not generic. With builtin female threading (screw hole) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
 
@@ -196,11 +197,14 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - 4.16mm magnet holes diameter was too big so I changed the design to 4.11mm diameter for a perfect fit.
 
+- 1 unit ordered [via PCBWay](./docs/pcbway_order_price_01_00_00.png)
+
 ## male_thread_01_00_00
 [male_thread.py](./male_thread_01_00_00/male_thread.py)\
 [PCBWay raw result top](./docs/pcbway_male_thread_01_00_00_raw.jpg)\
 [PCBWay raw result bottom](./docs/pcbway_male_female_threads_01_00_00_raw.jpg)\
-Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
+Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)\
+[Final result](./docs/pcbway_threads_01_00_01_final_result.png)
 
 - Only male, not generic. With builtin male threading (screw) instead of relying on [purchasing adapter from Sanwu](#threads) and using angle grinder.
 
@@ -216,13 +220,20 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - 4.16mm magnet holes diameter was too big so I changed the design to 4.11mm diameter for a perfect fit.
 
+- 1 unit ordered [via PCBWay](./docs/pcbway_order_price_01_00_00.png)
+
 ## rangers_guard_sleeve_01_00_01
 [rangers_guard_sleeve_01_00_00.py](./rangers_guard_sleeve_01_00_01/rangers_guard_sleeve.py)\
-[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01_raw.jpg)
+[PCBWay raw result](./docs/pcbway_guard_sleeve_01_00_01_raw.jpg)\
+[Final result](./docs/pcbway_threads_01_00_01_final_result.png)
 
 - Slightly narrower steps- so the fit onto the Laser Rangers head is more snug and secure (less dependent on screw mechanism)
 
 - Different length and internal and external diameters to fit the now smaller and thinner [male_thread](./male_thread_01_00_00/) and [female_thread](./female_thread_01_00_00/)
+
+- Compatible with [male_thread_01_00_00](#male_thread_01_00_00) & [female_thread_01_00_00](#female_thread_01_00_00).
+
+- 1 unit ordered [via PCBWay](./docs/pcbway_order_price_01_00_00.png)
 
 ## rangers_guard_sleeve_01_00_00
 [rangers_guard_sleeve_01_00_00.py](./old/rangers_guard_sleeve_01_00_00.py)\
@@ -234,7 +245,7 @@ Based on [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - Fills-in ugly gap at the stairs of the **Laser Rangers** laser head- only compatible with [models 1, 2, 4, 5, 7, 8](./docs/laser_rangers_body_models.png). I recommend model 7 or model 2.
 
-- Compatible with `magnet_holes_01_00_00` and with `magnet_holes_01_00_01`
+- Compatible with [magnet_holes_01_00_00](#magnet_holes_01_00_00) and with [magnet_holes_01_00_01](#magnet_holes_01_00_01)
 
 - 2 units ordered [via PCBWay](./docs/pcbway_order_01.png)
 
