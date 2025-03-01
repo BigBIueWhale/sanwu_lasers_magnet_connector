@@ -84,7 +84,7 @@ When stacking two magnets per hole, the magnets are **very** slightly extruding 
 
 The small gap is also a feature- it causes the flashlight adapter to **not** be air-tight which makes it easier to change focus without causing a vacuum (which was always a feature that was bothering me in the default flashlight adapter behaviour).
 
-I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets. I then changed the design to 4.11mm diameter for a tight fit- so you now have to push-in each bottom magnet with a vice.
+I originally chose 4.04mm hole width but that was not enough, so then I changed the design to 4.16mm hole to make it easier to push-in the magnets. I then changed the design to 4.11mm diameter for a tight fit- so you now have to push-in each bottom magnet with a bench vice.
 
 # Threads
 
@@ -128,18 +128,18 @@ If you made a visual change to [male_thread.py](./male_thread_01_00_00/male_thre
 The `XX_visual.py` files exist solely for technical drawing purposes- and each generates a `XX_visual.stl` file.\
 Feel free to use [create_images.py](./male_thread_01_00_00/technical_drawing/create_images.py) / [create_images.py](./female_thread_01_00_00/technical_drawing/create_images.py) to generate updated images for use in the the technical drawing you're updating.
 
-## Requirements
+## Software Requirements
 - Tested on Windows 11 Pro 23H2
 - Ran with Python 3.10.6
 - Specific versions chose: `pip install cadquery==2.4.0 numpy==1.23.5`
 
 ## Assembly
 
-1. Prepare [the male & female pieces](./docs/pcbway_male_female_threads_01_00_00_raw.jpg), [the magnets](./docs/magnets_box_findmag.jpg), and a vice.
+1. Prepare [the male & female pieces](./docs/pcbway_male_female_threads_01_00_00_raw.jpg), [the magnets](./docs/magnets_box_findmag.jpg), and a bench vice.
 
 2. Insert a stack of 2 magnets with your hands into one of the holes- it won't push-in all the way and the top magnet will stick ~1mm out of the hole (as opposed to ~0.15mm when pushed in all the way).
 
-3. Use a vice to push the stack all the way down- the bottom magnet is now stuck down there and will never come out, no glue needed.\
+3. Use a bench vice to push the stack all the way down- the bottom magnet is now stuck down there and will never come out, no glue needed.\
 The top magnet is slightly sticking out (only ~0.15mm) and in practice is loose.
 
 4. Use a stack of magnets to pull out the top magnet. If it comes out- good!\
@@ -150,7 +150,7 @@ We have now finished pushing-in a total of 24 magnets to the bottom of the 24 ho
 
 6. Wear black nitrile gloves and protective goggles (laser safety goggles work)- and prepare the [super glue](./docs/good_super_glue_brand.jpg).\
 Prepare paper towel as well to wipe off excess super glue. Move entire work area to baking paper surface to avoid sticking.\
-Keep a vice nearby just in case.
+Keep a bench vice nearby just in case.
 
 7. **Note:** If a bottom magnet is loose in its hole (due to machining mishaps)- then you can use super glue on the entire stack of 2 magnets in one push. **Never use super glue more than once per hole** because that would cause an unreparable gap between the bottom magnet and the top magnet (due to the dried super glue) then you'll have to throw away the entire piece (I say this from experience). 
 
@@ -158,7 +158,7 @@ Keep a vice nearby just in case.
 
 9. Hold the stack of magnets in the correct polarity for the hole, and quickly insert the top magnet and slide off the rest of the stack of magnets (such that now a stack of 2 magnets is in the hole). Quickly wipe the bottom of the magnet stack on paper towel to avoid the negative effect of excess super glue contaminating the magnet stack.\
 Immediately push down hard on the just-inserted magnet with the same paper towel while rubbing away excess super glue.\
-If even when pushing down with paper towel you see that the magnet isn't pushed-in all the way: use a vice ASAP. If only a minute has passed you might still have a chance to push the top magnet down to stop it from permanently sticking out.
+If even when pushing down with paper towel you see that the magnet isn't pushed-in all the way: use a bench vice ASAP. If only a minute has passed you might still have a chance to push the top magnet down to stop it from permanently sticking out.
 
 10. Don't worry, you can reuse the paper towel because super glue immediately dries when exposed to paper towel. However- after each magnet insertion make sure to wipe off any drips of liquid super glue that may have fallen onto the baking paper's surface.
 
@@ -172,7 +172,7 @@ Prepare Q-Tips and paper towel.
 
 14. Very quickly start wiping the [top ring](./docs/guard_sleeve_01_00_01_top_ring.jpg) with paper towel. Just as quickly [wipe the bottom](./docs/guard_sleeve_01_00_01_area_to_wipe.jpg) with Q-tips to avoid any significant width of excess super glue from hardening.
 
-15. If you failed to push all the way down (and the super glue hardened), push the [male_thread](#male_thread_01_00_00) out of the [rangers_guard_sleeve](#rangers_guard_sleeve_01_00_00) using a vice. Optionally, take [the female side](./docs/sanwu_striker_adapter_female_view.jpg) of a [Sanwu adapter for striker](./docs/sanwu_adapter_order_separately.png) to [gain leverage](./docs/gain_leverage.jpg) with the vice (without damaging our machined part).\
+15. If you failed to push all the way down (and the super glue hardened), push the [male_thread](#male_thread_01_00_00) out of the [rangers_guard_sleeve](#rangers_guard_sleeve_01_00_00) using a bench vice. Optionally, take [the female side](./docs/sanwu_striker_adapter_female_view.jpg) of a [Sanwu adapter for striker](./docs/sanwu_adapter_order_separately.png) to [gain leverage](./docs/gain_leverage.jpg) with the bench vice (without damaging our machined part).\
 Finally scrape off the previously-applied super glue using a needle or other sharp metal rod, or by pushing in-and-out the [male_thread](#male_thread_01_00_00). Then try again to repeat steps 13 -> 14.
 
 # Release Notes
